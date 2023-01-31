@@ -1,0 +1,25 @@
+main{
+    margin : 1rem;
+    padding : 1rem;
+    border-radius: 5px;
+
+}
+label{
+    width: 110px;
+    display: inline-block;
+}
+fieldset{
+    margin-bottom: 15px;
+    padding: 10px;
+}
+input, textarea{
+    width: 249px;
+    padding: 5px;
+    margin: 5px;
+}
+.bouton{
+    text-align: center;
+}
+.invisible, .erreur.invisible{
+    display: none;
+}

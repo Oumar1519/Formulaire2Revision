@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<main>
+
+    <h1>Formulaire de paiement</h1>
+    <p class="muted italic margin-bottom-2">Les champs marqués d'un <sup>*</sup> sont obligatoires.</p>
+    <form method="post">
+        <fieldset class="form-align-col no-border align-label-right">
+            <legend>Information de contact</legend>
+            <div class="border">
+                <div>
+                    <label for="nom"><span> Nom <sup>*</sup>: </span></label>
+                    <input type="text" id="nom" name="nom" placeholder="Oumar Camara" required minlength="2" maxlength="100">
+                </div>
+                <div>
+                    <label for="courriel">Courriel: </label>
+                    <input type="email" name="courriel" id="courriel" value="custumer@company.com">
+                </div>
+                <div>
+                    <label for="Telephone">Téléphone:</label>
+                    <input type="tel" name="telephone" id="Telephone"
+                           title="Format attendut: 555-555-5555 ou (555) 555-5555 ou 5555555555"
+                           pattern="\(?(613|819|204)(\)\s|-)?\d{3}-?\d{4}">
+                </div>
+                <div>
+                    <label for="compagnie">Compagnie: </label>
+                    <input type="text" list="company" id="compagnie" name="compagnie">
+                    <datalist id="company">
+                        <option>Cyberdyne</option>
+                        <option>Lynx</option>
+                    </datalist>
+                </div>
+                <div>
+                    <label for="province">Province:</label>
+                    <select id="province" name="province">
+                        <option value="qc">Québec</option>
+                        <option value="on">Ontario</option>
+                        <option value="mb">Manitoba</option>
+                    </select>
+                    <p class="erreur invisible">Attention la province ne semble pas correspondre à votre numéro de téléphone.</p>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="form-align-col no-border align-label-right" id="commande">
+            <legend> Informations sur la commande</legend>
+            <div class="fruit">
+                <div>
+                    <label for="pomme">Pommes: </label>
+                    <input type="number" id="pomme" name="pomme" min="0" max="40" value="0">
+                </div>
+                <div>
+                    <label for="patate">Patate: </label>
+                    <input type="range" id="patate" name="patate" min="0" max="40" step="5" value="0">
+                    <span id="nbPatate">0</span>
+                    <p class="erreur invisible">Attention vous devez commander plus de patate que de pommes</p>
+                </div>
+            </div>
+
+        </fieldset>
+        <fieldset class="no-border">
+            <legend>Vos commentaires</legend>
+            <div class="pseudoname">
+                <label for="pseudo">Pseudonyme (3-9 caracteres:): </label>
+                <input type="text" id="pseudo" name="pseudonyme" minlength="3" maxlength="9"
+                       pattern="[A-Z].{1,6}(!|\$|\?">
+            </div>
+            <div>
+                <label for="commentaire">Commentaires: </label>
+                <textarea name="commentaire" id="commentaire" cols="30" rows="3"></textarea>
+            </div>
+        </fieldset>
+        <div class="bouton">
+            <button type="submit">Envoyer</button>
+            <button type="reset">Ennuler</button>
+        </div>
+    </form>
+</main>
+</body>
+</html>
